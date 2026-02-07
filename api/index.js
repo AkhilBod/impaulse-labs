@@ -8,14 +8,10 @@ dotenv.config();
 
 const app = express();
 
-// Database connection pool
+// Database connection pool - use POSTGRES_URL from Neon/Vercel
 const pool = new Pool({
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  host: process.env.DB_HOST,
-  port: parseInt(process.env.DB_PORT || '5432'),
-  database: process.env.DB_NAME,
-  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false,
+  connectionString: process.env.POSTGRES_URL || `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT || 5432}/${process.env.DB_NAME}`,
+  ssl: process.env.DB_SSL === 'true' || process.env.POSTGRES_URL ? { rejectUnauthorized: false } : false,
 });
 
 // Middleware
