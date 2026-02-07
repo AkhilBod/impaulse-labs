@@ -9,11 +9,11 @@ export interface StockQuote {
   logo: string;
 }
 
-// Stock logos using actual image files
+// Stock logos using public folder
 const stockLogos: Record<string, { logo: string; color: string }> = {
-  'AAPL': { logo: '/assets/image.png', color: '#000000' },
-  'MSFT': { logo: '/assets/image copy 2.png', color: '#00A4EF' },
-  'NVDA': { logo: '/assets/image copy.png', color: '#76B900' },
+  'AAPL': { logo: '/image.png', color: '#000000' },
+  'MSFT': { logo: '/image-copy-2.png', color: '#00A4EF' },
+  'NVDA': { logo: '/image-copy.png', color: '#76B900' },
   'GOOGL': { logo: 'G', color: '#4285F4' },
   'AMZN': { logo: 'A', color: '#FF9900' },
   'META': { logo: 'M', color: '#0081FB' },
@@ -79,9 +79,9 @@ export async function getPopularStocks(): Promise<StockQuote[]> {
   // If API fails, return fallback data with image paths
   if (stocks.length === 0) {
     return [
-      { symbol: 'AAPL', name: 'Apple Inc.', price: 185.92, change: 2.34, changePercent: '1.27', logo: '/assets/image.png' },
-      { symbol: 'MSFT', name: 'Microsoft', price: 415.50, change: 5.20, changePercent: '1.26', logo: '/assets/image copy 2.png' },
-      { symbol: 'NVDA', name: 'NVIDIA', price: 875.28, change: 15.43, changePercent: '1.79', logo: '/assets/image copy.png' },
+      { symbol: 'AAPL', name: 'Apple Inc.', price: 185.92, change: 2.34, changePercent: '1.27', logo: '/image.png' },
+      { symbol: 'MSFT', name: 'Microsoft', price: 415.50, change: 5.20, changePercent: '1.26', logo: '/image-copy-2.png' },
+      { symbol: 'NVDA', name: 'NVIDIA', price: 875.28, change: 15.43, changePercent: '1.79', logo: '/image-copy.png' },
     ];
   }
   
