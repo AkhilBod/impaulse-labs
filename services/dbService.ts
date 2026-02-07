@@ -2,6 +2,8 @@ import { UserSettings, Goal } from '../types';
 
 const API_BASE_URL = (import.meta as any).env.VITE_API_BASE_URL || process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
 
+console.log('[dbService] Using API_BASE_URL:', API_BASE_URL);
+
 export interface UserData {
   id: string;
   email: string;
@@ -13,15 +15,26 @@ export interface UserData {
 class DatabaseService {
   // Auth
   async signup(email: string, fullName: string, password: string): Promise<UserData> {
-    const response = await fetch(`${API_BASE_URL}/auth/signup`, {
+    const url = `${API_BASE_URL}/auth/signup`;
+    console.log('[dbService] Signing up to:', url);
+    
+    const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, fullName, password }),
     });
 
+    console.log('[dbService] Response status:', response.status);
+    
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.error || 'Signup failed');
+      const text = await response.text();
+      console.error('[dbService] Error response:', text);
+      try {
+        const error = JSON.parse(text);
+        throw new Error(error.error || 'Signup failed');
+      } catch (e) {
+        throw new Error(`Signup failed: ${response.status} - ${text}`);
+      }
     }
 
     const data = await response.json();
