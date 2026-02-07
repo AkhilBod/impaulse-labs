@@ -14,17 +14,6 @@
       "source": "/api/:path*",
       "destination": "/api"
     }
-  ],
-  "env": [
-    "VITE_GEMINI_API_KEY",
-    "VITE_ALPHA_VANTAGE_API_KEY",
-    "REACT_APP_API_URL",
-    "DB_USER",
-    "DB_PASSWORD",
-    "DB_HOST",
-    "DB_PORT",
-    "DB_NAME",
-    "DB_SSL"
   ]
 }
 
