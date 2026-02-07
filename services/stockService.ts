@@ -1,0 +1,91 @@
+const ALPHA_VANTAGE_API_KEY = 'PS7F4XE2SWBQJQVY';
+
+export interface StockQuote {
+  symbol: string;
+  name: string;
+  price: number;
+  change: number;
+  changePercent: string;
+  logo: string;
+}
+
+// Stock logos (using company colors as backgrounds)
+const stockLogos: Record<string, { logo: string; color: string }> = {
+  'AAPL': { logo: '🍎', color: '#000000' },
+  'MSFT': { logo: 'M', color: '#00A4EF' },
+  'GOOGL': { logo: 'G', color: '#4285F4' },
+  'AMZN': { logo: 'A', color: '#FF9900' },
+  'NVDA': { logo: 'N', color: '#76B900' },
+  'META': { logo: 'M', color: '#0081FB' },
+  'TSLA': { logo: 'T', color: '#CC0000' },
+};
+
+const stockNames: Record<string, string> = {
+  'AAPL': 'Apple Inc.',
+  'MSFT': 'Microsoft',
+  'GOOGL': 'Alphabet',
+  'AMZN': 'Amazon',
+  'NVDA': 'NVIDIA',
+  'META': 'Meta',
+  'TSLA': 'Tesla',
+};
+
+export async function getStockQuote(symbol: string): Promise<StockQuote | null> {
+  try {
+    const response = await fetch(
+      `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${ALPHA_VANTAGE_API_KEY}`
+    );
+    
+    const data = await response.json();
+    
+    if (data['Global Quote']) {
+      const quote = data['Global Quote'];
+      const price = parseFloat(quote['05. price']) || 0;
+      const change = parseFloat(quote['09. change']) || 0;
+      const changePercent = quote['10. change percent'] || '0%';
+      
+      return {
+        symbol,
+        name: stockNames[symbol] || symbol,
+        price,
+        change,
+        changePercent: changePercent.replace('%', ''),
+        logo: stockLogos[symbol]?.logo || symbol[0],
+      };
+    }
+    
+    return null;
+  } catch (error) {
+    console.error(`Error fetching ${symbol}:`, error);
+    return null;
+  }
+}
+
+export async function getPopularStocks(): Promise<StockQuote[]> {
+  const symbols = ['AAPL', 'MSFT', 'NVDA'];
+  const stocks: StockQuote[] = [];
+  
+  for (const symbol of symbols) {
+    const quote = await getStockQuote(symbol);
+    if (quote) {
+      stocks.push(quote);
+    }
+    // Small delay to avoid rate limiting
+    await new Promise(resolve => setTimeout(resolve, 300));
+  }
+  
+  // If API fails, return fallback data
+  if (stocks.length === 0) {
+    return [
+      { symbol: 'AAPL', name: 'Apple Inc.', price: 185.92, change: 2.34, changePercent: '+1.27', logo: '🍎' },
+      { symbol: 'MSFT', name: 'Microsoft', price: 415.50, change: 5.20, changePercent: '+1.26', logo: 'M' },
+      { symbol: 'NVDA', name: 'NVIDIA', price: 875.28, change: 15.43, changePercent: '+1.79', logo: 'N' },
+    ];
+  }
+  
+  return stocks;
+}
+
+export function getStockColor(symbol: string): string {
+  return stockLogos[symbol]?.color || '#10B981';
+}

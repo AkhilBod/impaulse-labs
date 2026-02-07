@@ -148,13 +148,16 @@ const App: React.FC = () => {
               investmentPotential: prev.investmentPotential + investment
             }));
             
-            // Update goals savings
+            // Equally distribute savings to ALL selected goals
+            const selectedGoals = userGoals.filter(g => g.selected);
+            const amountPerGoal = selectedGoals.length > 0 ? amount / selectedGoals.length : 0;
+            
             const updatedGoals = userGoals.map(goal => {
-              if (goal.title.includes(category) || category.includes(goal.title)) {
-                console.log('[App] Updating goal:', goal.title, 'with amount:', amount);
+              if (goal.selected) {
+                console.log('[App] Updating goal:', goal.title, 'with amount:', amountPerGoal);
                 return {
                   ...goal,
-                  savedAmount: (goal.savedAmount || 0) + amount
+                  savedAmount: (goal.savedAmount || 0) + amountPerGoal
                 };
               }
               return goal;

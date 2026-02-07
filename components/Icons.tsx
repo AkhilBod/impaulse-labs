@@ -19,7 +19,9 @@ import {
   ShieldAlert,
   PiggyBank,
   Check,
-  TrendingUp
+  TrendingUp,
+  DollarSign,
+  AlertTriangle
 } from 'lucide-react';
 
 export const Icons = {
@@ -42,7 +44,9 @@ export const Icons = {
   ShieldAlert,
   PiggyBank,
   Check,
-  TrendingUp
+  TrendingUp,
+  DollarSign,
+  AlertTriangle
 };
 
 // Simple shapes for the "Envelopes" illustration simulation

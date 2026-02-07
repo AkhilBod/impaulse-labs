@@ -1,4 +1,4 @@
--- Create tables for BuyBye app
+-- Create tables for Impaulse Labs app
 
 -- Users table
 CREATE TABLE users (

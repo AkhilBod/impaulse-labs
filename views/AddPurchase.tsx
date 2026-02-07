@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Icons } from '../components/Icons';
 import { UserSettings, Goal } from '../types';
 import { analyzeProductImage, getImpulseAdvice, calculateWorkHours, calculateInvestmentValue } from '../services/geminiService';
+import { getPopularStocks, StockQuote, getStockColor } from '../services/stockService';
 
 interface Props {
   settings: UserSettings;
@@ -18,6 +19,99 @@ interface AnalysisResult {
   investmentValue: number;
 }
 
+// Success Modal Component with real stock data
+const SuccessModal: React.FC<{
+  analysisResult: AnalysisResult;
+  settings: UserSettings;
+  stocks: StockQuote[];
+  stocksLoading: boolean;
+  onClose: () => void;
+}> = ({ analysisResult, settings, stocks, stocksLoading, onClose }) => {
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto">
+      <div className="bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden my-8">
+        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 p-8 text-center">
+          <h1 className="text-4xl font-black text-white mb-2">GREAT CHOICE!</h1>
+          <p className="text-emerald-100 font-semibold text-lg">You saved money today</p>
+        </div>
+
+        <div className="p-8 space-y-4">
+          {/* Savings Stats */}
+          <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 text-center border border-emerald-200">
+            <p className="text-black font-bold text-xs tracking-widest uppercase mb-2">Money Saved</p>
+            <p className="text-5xl font-black text-black">{settings.currency}{analysisResult.estimatedPrice}</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-4 text-center border border-blue-200">
+              <p className="text-black font-bold text-xs tracking-widest uppercase mb-1">Work Time</p>
+              <p className="text-2xl font-black text-black">{analysisResult.workHours.hours}h {analysisResult.workHours.minutes}m</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 text-center border border-purple-200">
+              <p className="text-black font-bold text-xs tracking-widest uppercase mb-1">In 5 Years</p>
+              <p className="text-2xl font-black text-black">{settings.currency}{analysisResult.investmentValue.toFixed(0)}</p>
+            </div>
+          </div>
+
+          {/* Invest This Instead - Real Stock Data */}
+          <div className="bg-gray-50 rounded-2xl p-4 border border-gray-200">
+            <p className="text-black font-bold text-sm mb-3">Invest this instead 📈</p>
+            {stocksLoading ? (
+              <div className="flex items-center justify-center py-4">
+                <span className="text-2xl animate-spin">⏳</span>
+                <span className="ml-2 text-black text-sm">Loading stocks...</span>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {stocks.map((stock) => (
+                  <div key={stock.symbol} className="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-100 hover:border-emerald-300 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div 
+                        className="w-10 h-10 rounded-lg flex items-center justify-center"
+                        style={{ backgroundColor: getStockColor(stock.symbol) }}
+                      >
+                        {stock.symbol === 'AAPL' ? (
+                          <span className="text-xl">🍎</span>
+                        ) : (
+                          <span className="text-sm font-bold text-white">{stock.logo}</span>
+                        )}
+                      </div>
+                      <div>
+                        <p className="font-bold text-sm text-black">{stock.symbol}</p>
+                        <p className="text-xs text-gray-600">{stock.name}</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs font-bold text-black">${stock.price.toFixed(2)}</p>
+                      <p className={`text-sm font-black ${parseFloat(stock.changePercent) >= 0 ? 'text-emerald-600' : 'text-red-600'}`}>
+                        {parseFloat(stock.changePercent) >= 0 ? '+' : ''}{stock.changePercent}%
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="bg-gray-100 p-6 border-t border-gray-200">
+          <button
+            onClick={onClose}
+            className="w-full bg-black hover:bg-gray-900 text-white font-bold py-4 rounded-xl transition-all shadow-lg"
+          >
+            Back to Dashboard
+          </button>
+        </div>
+
+        <div className="bg-white border-t border-gray-200 p-4 text-center">
+          <p className="text-xs text-gray-500">Powered by Impaulse Labs</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const AddPurchase: React.FC<Props> = ({ settings, goals = [], onAddSavings }) => {
   const [loading, setLoading] = useState(false);
   const [sliderProgress, setSliderProgress] = useState(0);
@@ -26,6 +120,8 @@ const AddPurchase: React.FC<Props> = ({ settings, goals = [], onAddSavings }) =>
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [showCamera, setShowCamera] = useState(false);
   const streamRef = useRef<MediaStream | null>(null);
+  const [stocks, setStocks] = useState<StockQuote[]>([]);
+  const [stocksLoading, setStocksLoading] = useState(false);
   
   // Modal states
   const [showModal, setShowModal] = useState(false);
@@ -291,8 +387,14 @@ const AddPurchase: React.FC<Props> = ({ settings, goals = [], onAddSavings }) =>
                    Unsure
                  </button>
                  <button
-                   onClick={() => {
+                   onClick={async () => {
                      if (analysisResult) {
+                       // Start loading stocks
+                       setStocksLoading(true);
+                       setShowSuccessModal(true);
+                       setShowModal(false);
+                       
+                       // Add savings
                        onAddSavings?.(
                          analysisResult.estimatedPrice,
                          analysisResult.workHours.hours,
@@ -300,8 +402,16 @@ const AddPurchase: React.FC<Props> = ({ settings, goals = [], onAddSavings }) =>
                          analysisResult.investmentValue,
                          analysisResult.category
                        );
-                       setShowSuccessModal(true);
-                       setShowModal(false);
+                       
+                       // Fetch real stock data
+                       try {
+                         const stockData = await getPopularStocks();
+                         setStocks(stockData);
+                       } catch (error) {
+                         console.error('Error fetching stocks:', error);
+                       } finally {
+                         setStocksLoading(false);
+                       }
                      }
                    }}
                    className="w-full bg-black hover:bg-gray-900 text-white font-bold py-4 rounded-xl transition-colors"
@@ -311,7 +421,7 @@ const AddPurchase: React.FC<Props> = ({ settings, goals = [], onAddSavings }) =>
                </div>
 
                <div className="bg-white border-t border-gray-200 p-4 text-center">
-                 <p className="text-xs text-gray-500">Powered by BuyBye</p>
+                 <p className="text-xs text-gray-500">Powered by Impaulse Labs</p>
                </div>
              </div>
            </div>
@@ -320,101 +430,79 @@ const AddPurchase: React.FC<Props> = ({ settings, goals = [], onAddSavings }) =>
          {/* Unsure Modal */}
          {showUnsureModal && analysisResult && (
            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-             <div className="bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden">
-               <div className="bg-blue-500 p-8 text-center relative">
+             <div className="bg-[#F2F9F6] rounded-3xl max-w-md w-full shadow-2xl overflow-hidden">
+               <div className="bg-gradient-to-r from-gray-800 to-gray-900 p-6 text-center relative">
                  <button
                    onClick={() => setShowUnsureModal(false)}
-                   className="absolute top-4 right-4 text-white text-2xl font-bold"
+                   className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl font-bold transition-colors"
                  >
                    ✕
                  </button>
-                 <h1 className="text-3xl font-black text-white mb-1">Still want it?</h1>
-                 <p className="text-blue-100 font-semibold">Need more time?</p>
+                 <h1 className="text-2xl font-black text-white mb-1">Still want it?</h1>
+                 <p className="text-gray-400 font-medium text-sm">Set a reminder to think it over</p>
                </div>
 
-               <div className="p-8 space-y-6">
+               <div className="p-6 space-y-5">
                  <div>
-                   <label className="block text-sm font-bold text-gray-900 mb-2">Add a name (optional)</label>
+                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Item Name (optional)</label>
                    <input
                      type="text"
                      value={unsureData.name}
                      onChange={(e) => setUnsureData({ ...unsureData, name: e.target.value })}
                      placeholder={analysisResult.productName}
-                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-900"
                    />
                  </div>
 
                  <div>
-                   <label className="block text-sm font-bold text-gray-900 mb-3">Pick a category</label>
-                   <div className="grid grid-cols-2 gap-3">
-                     <button
-                       onClick={() => setUnsureData({ ...unsureData, category: 'Clothes' })}
-                       className={`p-4 rounded-xl transition-colors text-center ${
-                         unsureData.category === 'Clothes'
-                           ? 'bg-blue-600 text-white'
-                           : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                       }`}
-                     >
-                       <div className="text-3xl mb-1">👕</div>
-                       <div className="font-bold text-xs">Clothes</div>
-                     </button>
-                     <button
-                       onClick={() => setUnsureData({ ...unsureData, category: 'Decor' })}
-                       className={`p-4 rounded-xl transition-colors text-center ${
-                         unsureData.category === 'Decor'
-                           ? 'bg-blue-600 text-white'
-                           : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                       }`}
-                     >
-                       <div className="text-3xl mb-1">🛋️</div>
-                       <div className="font-bold text-xs">Decor</div>
-                     </button>
-                     <button
-                       onClick={() => setUnsureData({ ...unsureData, category: 'Travel' })}
-                       className={`p-4 rounded-xl transition-colors text-center ${
-                         unsureData.category === 'Travel'
-                           ? 'bg-blue-600 text-white'
-                           : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                       }`}
-                     >
-                       <div className="text-3xl mb-1">🌍</div>
-                       <div className="font-bold text-xs">Travel</div>
-                     </button>
-                     <button
-                       onClick={() => setUnsureData({ ...unsureData, category: 'Electronics' })}
-                       className={`p-4 rounded-xl transition-colors text-center ${
-                         unsureData.category === 'Electronics'
-                           ? 'bg-blue-600 text-white'
-                           : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                       }`}
-                     >
-                       <div className="text-3xl mb-1">🎧</div>
-                       <div className="font-bold text-xs">Electro</div>
-                     </button>
+                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">Category</label>
+                   <div className="grid grid-cols-2 gap-2">
+                     {[
+                       { key: 'Clothes', label: '👕 Clothes' },
+                       { key: 'Decor', label: '🏠 Home' },
+                       { key: 'Travel', label: '✈️ Travel' },
+                       { key: 'Electronics', label: '📱 Tech' }
+                     ].map(cat => (
+                       <button
+                         key={cat.key}
+                         onClick={() => setUnsureData({ ...unsureData, category: cat.key })}
+                         className={`p-4 rounded-xl transition-all font-bold text-sm ${
+                           unsureData.category === cat.key
+                             ? 'bg-black text-white shadow-md'
+                             : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-300'
+                         }`}
+                       >
+                         {cat.label}
+                       </button>
+                     ))}
                    </div>
                  </div>
 
                  <div>
-                   <label className="block text-sm font-bold text-gray-900 mb-3">Remind me</label>
-                   <div className="space-y-2">
-                     {[1, 24, 48].map(time => (
+                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">Remind me in</label>
+                   <div className="flex gap-2">
+                     {[
+                       { time: 1, label: '1 hour' },
+                       { time: 24, label: '24 hours' },
+                       { time: 48, label: '48 hours' }
+                     ].map(({ time, label }) => (
                        <button
                          key={time}
                          onClick={() => setUnsureData({ ...unsureData, reminderTime: time })}
-                         className={`w-full p-3 rounded-xl font-bold transition-colors text-left ${
+                         className={`flex-1 p-3 rounded-xl font-bold transition-all text-sm ${
                            unsureData.reminderTime === time
-                             ? 'bg-blue-600 text-white'
-                             : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                             ? 'bg-black text-white shadow-md'
+                             : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-300'
                          }`}
                        >
-                         {time === 1 ? '1 hour' : `${time}-hours`}
+                         {label}
                        </button>
                      ))}
                    </div>
                  </div>
                </div>
 
-               <div className="bg-gray-50 p-6">
+               <div className="p-6 pt-0">
                  <button
                    onClick={() => {
                      setAlertModal({ show: true, message: `We'll remind you in ${unsureData.reminderTime === 1 ? '1 hour' : unsureData.reminderTime + ' hours'}!` });
@@ -422,9 +510,9 @@ const AddPurchase: React.FC<Props> = ({ settings, goals = [], onAddSavings }) =>
                      setShowModal(false);
                      setAnalysisResult(null);
                    }}
-                   className="w-full bg-black hover:bg-gray-900 text-white font-bold py-4 rounded-xl transition-colors"
+                   className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold py-4 rounded-xl transition-all shadow-lg"
                  >
-                   Set Notification
+                   Set Reminder
                  </button>
                </div>
              </div>
@@ -433,78 +521,16 @@ const AddPurchase: React.FC<Props> = ({ settings, goals = [], onAddSavings }) =>
 
          {/* Success Modal */}
          {showSuccessModal && analysisResult && (
-           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto">
-             <div className="bg-white rounded-3xl max-w-md w-full shadow-2xl overflow-hidden my-8">
-               <div className="bg-gradient-to-r from-emerald-500 to-teal-500 p-8 text-center">
-                 <h1 className="text-4xl font-black text-white mb-2">GREAT CHOICE!</h1>
-                 <p className="text-emerald-100 font-semibold text-lg">You saved money today</p>
-               </div>
-
-               <div className="p-8 space-y-4">
-                 {/* Savings Stats */}
-                 <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 text-center border border-emerald-200">
-                   <p className="text-gray-600 font-bold text-xs tracking-widest uppercase mb-2">Money Saved</p>
-                   <p className="text-5xl font-black text-emerald-600">{settings.currency}{analysisResult.estimatedPrice}</p>
-                 </div>
-
-                 <div className="grid grid-cols-2 gap-4">
-                   <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-4 text-center border border-blue-200">
-                     <p className="text-gray-600 font-bold text-xs tracking-widest uppercase mb-1">Work Time</p>
-                     <p className="text-2xl font-black text-blue-600">{analysisResult.workHours.hours}h {analysisResult.workHours.minutes}m</p>
-                   </div>
-
-                   <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 text-center border border-purple-200">
-                     <p className="text-gray-600 font-bold text-xs tracking-widest uppercase mb-1">In 5 Years</p>
-                     <p className="text-2xl font-black text-purple-600">{settings.currency}{analysisResult.investmentValue.toFixed(0)}</p>
-                   </div>
-                 </div>
-
-                 {/* Invest This Instead */}
-                 <div className="bg-gray-50 rounded-2xl p-4 border border-gray-200">
-                   <p className="text-gray-700 font-bold text-sm mb-3">Invest this instead 📈</p>
-                   <div className="space-y-2">
-                     {[
-                       { ticker: 'SPY', name: 'S&P 500', return: '+18%' },
-                       { ticker: 'QQQ', name: 'Nasdaq 100', return: '+22%' },
-                       { ticker: 'VOO', name: 'Vanguard S&P', return: '+17%' }
-                     ].map((stock) => (
-                       <div key={stock.ticker} className="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-100 hover:border-emerald-300 transition-colors">
-                         <div className="flex items-center gap-3">
-                           <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-                             <span className="text-sm font-bold text-emerald-600">{stock.ticker[0]}</span>
-                           </div>
-                           <div>
-                             <p className="font-bold text-sm text-gray-900">{stock.ticker}</p>
-                             <p className="text-xs text-gray-500">{stock.name}</p>
-                           </div>
-                         </div>
-                         <div className="text-right">
-                           <p className="text-xs font-bold text-gray-500">YTD</p>
-                           <p className="text-sm font-black text-emerald-600">{stock.return}</p>
-                         </div>
-                       </div>
-                     ))}
-                   </div>
-                 </div>
-               </div>
-
-               <div className="bg-gray-50 p-6 border-t border-gray-200">
-                 <button
-                   onClick={() => {
-                     setShowSuccessModal(false);
-                     setAnalysisResult(null);
-                   }}
-                   className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg"
-                 >
-                   Back to Dashboard
-                 </button>
-               </div>
-
-               <div className="bg-white border-t border-gray-200 p-4 text-center">
-                 <p className="text-xs text-gray-500">Powered by BuyBye</p>
-               </div>
-             </div>
-           </div>
+           <SuccessModal 
+             analysisResult={analysisResult}
+             settings={settings}
+             stocks={stocks}
+             stocksLoading={stocksLoading}
+             onClose={() => {
+               setShowSuccessModal(false);
+               setAnalysisResult(null);
+             }}
+           />
          )}
 
          {/* Progress Slider */}
@@ -548,11 +574,13 @@ const AddPurchase: React.FC<Props> = ({ settings, goals = [], onAddSavings }) =>
          {alertModal.show && (
            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
              <div className="bg-white rounded-2xl max-w-sm w-full shadow-2xl overflow-hidden">
-               <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-6 text-center">
-                 <p className="text-white font-bold">⚠️</p>
+               <div className="bg-gradient-to-r from-amber-400 to-orange-400 p-8 text-center">
+                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg">
+                   <Icons.AlertTriangle className="text-amber-500" size={36} />
+                 </div>
                </div>
                <div className="p-6 text-center">
-                 <p className="text-gray-900 font-semibold text-sm leading-relaxed">{alertModal.message}</p>
+                 <p className="text-gray-900 font-semibold text-base leading-relaxed">{alertModal.message}</p>
                </div>
                <div className="bg-gray-50 p-4 border-t border-gray-200">
                  <button

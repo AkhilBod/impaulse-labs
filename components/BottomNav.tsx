@@ -29,7 +29,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentView, setView }) => {
           onClick={() => setView(View.ENVELOPES)}
           className={navItemClass(currentView === View.ENVELOPES)}
         >
-          <Icons.Mail size={28} strokeWidth={2} />
+          <Icons.DollarSign size={28} strokeWidth={2} />
         </button>
 
         <button 

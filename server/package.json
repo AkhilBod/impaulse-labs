@@ -1,7 +1,7 @@
 {
   "name": "impaulse-server",
   "version": "1.0.0",
-  "description": "BuyBye backend server",
+  "description": "Impaulse Labs backend server",
   "main": "index.mjs",
   "type": "module",
   "scripts": {
