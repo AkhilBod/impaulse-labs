@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BottomNav from './components/BottomNav';
-import { View, UserSettings } from './types';
+import { View, UserSettings, Goal } from './types';
+import { dbService } from './services/dbService';
 import Login from './views/Login';
 import Signup from './views/Signup';
 import OnboardingBirthday from './views/OnboardingBirthday';
@@ -15,6 +16,9 @@ const App: React.FC = () => {
   // Navigation State
   const [currentView, setCurrentView] = useState<View>(View.LOGIN);
   
+  // User ID for database
+  const [userId, setUserId] = useState<string | null>(null);
+  
   // User Data State
   const [userSettings, setUserSettings] = useState<UserSettings>({
     currency: '$',
@@ -27,18 +31,62 @@ const App: React.FC = () => {
     incomeMode: 'salary'
   });
 
-  // Derived state or shared logic could go here
+  // Goals State
+  const [userGoals, setUserGoals] = useState<Goal[]>([]);
+
+  // Savings State
+  const [savings, setSavings] = useState({
+    moneySaved: 0,
+    workTimeSaved: { hours: 0, minutes: 0 },
+    investmentPotential: 0
+  });
+
+  // Load user data from database when userId changes
+  useEffect(() => {
+    const loadUserData = async () => {
+      if (userId) {
+        try {
+          console.log('[App] Loading data for userId:', userId);
+          const [settings, goals] = await Promise.all([
+            dbService.getSettings(userId),
+            dbService.getGoals(userId)
+          ]);
+          
+          console.log('[App] Loaded settings:', settings);
+          console.log('[App] Loaded goals:', goals);
+          
+          if (settings) {
+            setUserSettings(settings);
+          }
+          if (goals) {
+            setUserGoals(goals);
+          }
+        } catch (err) {
+          console.error('[App] Failed to load user data:', err);
+          // Continue with default settings if loading fails
+        }
+      }
+    };
+
+    loadUserData();
+  }, [userId]);
 
   const renderView = () => {
     switch (currentView) {
       case View.LOGIN:
         return <Login 
-          onLogin={() => setCurrentView(View.ONBOARDING_BIRTHDAY)} 
+          onLogin={(id) => {
+            setUserId(id);
+            setCurrentView(View.HOME);
+          }} 
           onSignup={() => setCurrentView(View.SIGNUP)}
         />;
       case View.SIGNUP:
         return <Signup 
-          onSignup={() => setCurrentView(View.ONBOARDING_BIRTHDAY)}
+          onSignup={(id) => {
+            setUserId(id);
+            setCurrentView(View.ONBOARDING_BIRTHDAY);
+          }}
           onBack={() => setCurrentView(View.LOGIN)}
         />;
       case View.ONBOARDING_BIRTHDAY:
@@ -56,31 +104,98 @@ const App: React.FC = () => {
         />;
       case View.ONBOARDING_GOALS:
         return <OnboardingGoals 
-          onNext={() => setCurrentView(View.HOME)} 
+          onNext={(goals) => {
+            setUserGoals(goals);
+            // Save to database if user ID exists
+            if (userId) {
+              dbService.saveGoals(userId, goals);
+              dbService.updateSettings(userId, userSettings);
+            }
+            setCurrentView(View.HOME);
+          }} 
           onBack={() => setCurrentView(View.ONBOARDING_INCOME)}
         />;
       case View.HOME:
-        return <Dashboard settings={userSettings} />;
+        return <Dashboard 
+          settings={userSettings} 
+          savings={savings}
+          onAddSavings={(amount, hours, minutes) => {
+            setSavings(prev => ({
+              moneySaved: prev.moneySaved + amount,
+              workTimeSaved: {
+                hours: prev.workTimeSaved.hours + hours,
+                minutes: (prev.workTimeSaved.minutes + minutes) % 60
+              },
+              investmentPotential: prev.investmentPotential + (amount * Math.pow(1.1, 5))
+            }));
+          }}
+        />;
       case View.ENVELOPES:
-        return <Envelopes settings={userSettings} />;
+        return <Envelopes settings={userSettings} goals={userGoals} />;
       case View.ADD_PURCHASE:
-        return <AddPurchase settings={userSettings} />;
+        return <AddPurchase 
+          settings={userSettings}
+          goals={userGoals}
+          onAddSavings={(amount, hours, minutes, investment, category) => {
+            console.log('[App] Adding savings:', { amount, hours, minutes, investment, category });
+            
+            setSavings(prev => ({
+              moneySaved: prev.moneySaved + amount,
+              workTimeSaved: {
+                hours: prev.workTimeSaved.hours + hours + Math.floor((prev.workTimeSaved.minutes + minutes) / 60),
+                minutes: (prev.workTimeSaved.minutes + minutes) % 60
+              },
+              investmentPotential: prev.investmentPotential + investment
+            }));
+            
+            // Update goals savings
+            const updatedGoals = userGoals.map(goal => {
+              if (goal.title.includes(category) || category.includes(goal.title)) {
+                console.log('[App] Updating goal:', goal.title, 'with amount:', amount);
+                return {
+                  ...goal,
+                  savedAmount: (goal.savedAmount || 0) + amount
+                };
+              }
+              return goal;
+            });
+            
+            console.log('[App] Updated goals:', updatedGoals);
+            setUserGoals(updatedGoals);
+            
+            // Save to database
+            if (userId) {
+              dbService.saveGoals(userId, updatedGoals);
+            }
+          }}
+        />;
       case View.SETTINGS:
-        return <Settings settings={userSettings} updateSettings={setUserSettings} />;
+        return <Settings 
+          settings={userSettings} 
+          updateSettings={setUserSettings}
+          userId={userId}
+          onLogout={() => {
+            setUserId(null);
+            setCurrentView(View.LOGIN);
+          }}
+        />;
       default:
         return <Dashboard settings={userSettings} />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#F2F9F6] text-gray-900 pb-20 safe-area-top">
-      {/* Content Area */}
-      <main className="w-full h-full">
-        {renderView()}
-      </main>
+    <div className="min-h-screen bg-[#F2F9F6] text-gray-900 flex flex-col items-center justify-center safe-area-top safe-area-bottom">
+      {/* iPhone Container */}
+      <div className="w-full max-w-md h-screen max-h-screen flex flex-col bg-[#F2F9F6]">
+        {/* Content Area */}
+        <main className="w-full flex-1 overflow-y-auto">
+          {renderView()}
+        </main>
 
-      {/* Navigation */}
-      <BottomNav currentView={currentView} setView={setCurrentView} />
+        {/* Navigation */}
+        <BottomNav currentView={currentView} setView={setCurrentView} />
+      </div>
     </div>
   );
 };

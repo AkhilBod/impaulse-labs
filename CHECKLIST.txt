@@ -1,0 +1,49 @@
+✅ POSTGRESQL & BACKEND SETUP CHECKLIST
+
+DATABASE
+✅ PostgreSQL installed and running
+✅ Database `impaulse_db` created
+✅ User `impaulse` created with password `impaulse_password`
+✅ Tables created (users, user_settings, goals)
+
+BACKEND SERVER
+✅ Express.js server created
+✅ Dependencies installed (express, pg, bcrypt, cors, dotenv)
+✅ .env file configured with database credentials
+✅ Server running on http://localhost:5001
+✅ All API routes implemented
+
+FRONTEND CONFIGURATION
+✅ .env file created with REACT_APP_API_URL=http://localhost:5001/api
+✅ dbService.ts created for API communication
+
+CREDENTIALS
+Host: localhost
+Port: 5432 (PostgreSQL)
+Database: impaulse_db
+User: impaulse
+Password: impaulse_password
+Backend Port: 5001
+
+RUNNING SERVERS
+Backend: http://localhost:5001
+Frontend: http://localhost:3001
+
+NEXT STEPS
+1. Update Login.tsx to use dbService instead of db
+2. Update Signup.tsx to use dbService
+3. Update Settings.tsx to use dbService
+4. Update App.tsx to load user data from backend
+5. Test full authentication flow
+
+API DOCUMENTATION
+POST   /api/auth/signup
+POST   /api/auth/login
+GET    /api/users/:userId/settings
+PUT    /api/users/:userId/settings
+GET    /api/users/:userId/goals
+POST   /api/users/:userId/goals
+DELETE /api/users/:userId
+GET    /api/health
+
+All ready to go! 🚀

@@ -195,6 +195,13 @@ const OnboardingGoals: React.FC<Props> = ({ onNext, onBack }) => {
       >
         {step === 'select' ? 'Continue' : 'Finish'}
       </button>
+
+      <button 
+        onClick={() => onNext(goals)}
+        className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 rounded-xl font-semibold text-sm transition-colors"
+      >
+        Skip (Dev)
+      </button>
     </div>
   );
 };

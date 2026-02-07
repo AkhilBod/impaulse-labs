@@ -123,6 +123,13 @@ const OnboardingIncome: React.FC<Props> = ({ settings, updateSettings, onNext, o
       >
         Continue
       </button>
+
+      <button 
+        onClick={onNext}
+        className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 rounded-xl font-semibold text-sm transition-colors"
+      >
+        Skip (Dev)
+      </button>
     </div>
   );
 };

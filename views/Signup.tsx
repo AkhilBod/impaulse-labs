@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Icons } from '../components/Icons';
+import { dbService } from '../services/dbService';
 
 interface Props {
-  onSignup: () => void;
+  onSignup: (userId: string) => void;
   onBack: () => void;
 }
 
@@ -12,13 +13,25 @@ const Signup: React.FC<Props> = ({ onSignup, onBack }) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [agreeTerms, setAgreeTerms] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const passwordsMatch = password && confirmPassword && password === confirmPassword;
   const isValid = fullName && email && passwordsMatch && agreeTerms;
 
-  const handleSignup = () => {
+  const handleSignup = async () => {
     if (isValid) {
-      onSignup();
+      setLoading(true);
+      try {
+        const user = await dbService.signup(email, fullName, password);
+        setError('');
+        onSignup(user.id);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Signup failed. Please try again.');
+        console.error('Signup error:', err);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -45,6 +58,13 @@ const Signup: React.FC<Props> = ({ onSignup, onBack }) => {
         {/* Signup Card */}
         <div className="bg-white rounded-3xl shadow-xl p-8 border border-emerald-100">
           <h3 className="text-2xl font-bold text-gray-900 mb-8">Create account</h3>
+
+          {/* Error Message */}
+          {error && (
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+              <p className="text-red-700 text-sm font-semibold">{error}</p>
+            </div>
+          )}
 
           {/* Full Name Input */}
           <div className="mb-6">
@@ -118,10 +138,10 @@ const Signup: React.FC<Props> = ({ onSignup, onBack }) => {
           {/* Signup Button */}
           <button
             onClick={handleSignup}
-            disabled={!isValid}
+            disabled={!isValid || loading}
             className="w-full bg-emerald-500 hover:bg-emerald-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white py-4 rounded-xl font-bold text-lg mb-4 transition-colors shadow-lg"
           >
-            Create Account
+            {loading ? 'Creating Account...' : 'Create Account'}
           </button>
 
           {/* Login Link */}

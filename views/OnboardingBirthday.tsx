@@ -20,6 +20,11 @@ const OnboardingBirthday: React.FC<Props> = ({ settings, updateSettings, onNext 
     }
   };
 
+  const handleSkip = () => {
+    // Skip without updating birthday, just go to next
+    onNext();
+  };
+
   const isValid = month && day && year && 
     parseInt(month) >= 1 && parseInt(month) <= 12 &&
     parseInt(day) >= 1 && parseInt(day) <= 31 &&
@@ -98,6 +103,13 @@ const OnboardingBirthday: React.FC<Props> = ({ settings, updateSettings, onNext 
         className="w-full bg-emerald-500 hover:bg-emerald-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white py-4 rounded-xl font-bold text-lg mb-4 transition-colors shadow-lg"
       >
         Continue
+      </button>
+
+      <button 
+        onClick={handleSkip}
+        className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 rounded-xl font-semibold text-sm transition-colors"
+      >
+        Skip (Dev)
       </button>
     </div>
   );

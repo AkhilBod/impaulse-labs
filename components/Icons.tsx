@@ -18,7 +18,8 @@ import {
   Heart,
   ShieldAlert,
   PiggyBank,
-  Check
+  Check,
+  TrendingUp
 } from 'lucide-react';
 
 export const Icons = {
@@ -40,7 +41,8 @@ export const Icons = {
   Heart,
   ShieldAlert,
   PiggyBank,
-  Check
+  Check,
+  TrendingUp
 };
 
 // Simple shapes for the "Envelopes" illustration simulation

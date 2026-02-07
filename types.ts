@@ -26,6 +26,14 @@ export interface Goal {
   title: string;
   icon: string; // Emoji or icon name
   selected: boolean;
+  targetAmount?: number;
+  savedAmount?: number;
+}
+
+export interface GoalWithTimeline extends Goal {
+  timeline3Month: number;
+  timeline6Month: number;
+  timeline1Year: number;
 }
 
 export interface SavingsStat {
