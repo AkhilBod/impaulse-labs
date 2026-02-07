@@ -50,7 +50,7 @@ const Signup: React.FC<Props> = ({ onSignup, onBack }) => {
 
         {/* Logo/Header */}
         <div className="text-center mb-12">
-          <img src="/assets/Adobe Express - file.png" alt="Impaulse Labs" className="w-24 h-24 mx-auto mb-4 object-contain" />
+          <img src="/logo.png" alt="Impaulse Labs" className="w-24 h-24 mx-auto mb-4 object-contain" />
           <h2 className="text-4xl font-bold text-gray-900 mb-2">Impaulse Labs</h2>
           <p className="text-gray-600">Join us today</p>
         </div>
