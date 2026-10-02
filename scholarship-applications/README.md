@@ -38,7 +38,7 @@ Barnes (law school only) · Meza (bilingual + legal studies) · Horizon (foster/
 | Largey Overcoming the Impossible | 1,000 | 11/30/26 | 750–1,000 words, traumatic event overcome | largeylaw.com form | Rejects AI-written essays. Draft in essays/drafted |
 | Jan Dils Path to Success | 1,000 | 12/1/26 | 501–1,000 words, who helped start your path + goals | jandils.com/path-to-success-scholarship | Checks for AI writing |
 | Future Leaders in Technology (Bold.org) | 2,000 | 12/1/26 | 400–600 words: what area of tech and why | Bold.org account | GPA 3.2 |
-| Google Lime Scholarship | 10,000 | early Dec 2026 | CS student with a disability (ADHD counts) | limeconnect.com | Top priority. Check whether a reference is required |
+| Google Lime Scholarship | 10,000 | 4/21/27 (per search results, confirm) | CS student with a disability (ADHD counts) + 3 essays | limeconnect.com | Needs 1 recommendation letter |
 | Henley & Henley Dedicated Volunteer | 1,000 | 12/6/26 | ~500 words, one specific volunteer memory and the difference made | henleylaw.net/scholarship | 10+ volunteer hours in past year; needs a real soup kitchen memory |
 | Burress Injury Law Underdog | up to 5,000 | 12/9/26 | ≤500 words, challenge persevered through | mytexasfirm.com/scholarship | Professional photo + proof of enrollment |
 | Study.com ADHD | 1,000 | 12/15/26 | check page | study.com/resources/students-with-adhd-scholarship | |
@@ -50,6 +50,25 @@ Barnes (law school only) · Meza (bilingual + legal studies) · Horizon (foster/
 | Lichtman Community Service | 1,000 | 3/30/27 | 750–1,000 words on a service activity you initiated | official form | Rejects AI writing; only if you started something |
 | Disparti Service to Humanity | 1,000 | 4/30/27 | 750 words on helping others, lessons, when it began mattering | email, subject: AKHIL BODAHANAPATI – DISPARTI LAW GROUP SERVICE TO HUMANITY SCHOLARSHIP | Resume attached, Times New Roman 12, GPA 3.0 |
 | Banyan College Scholarship | varies | check | South Asian Americans | check | |
+
+## Must be applicant's own writing (do not use AI drafts)
+Largey · Umansky · Lichtman · Jan Dils · Trajan · Dundee Deco · Elie Wiesel
+
+## No-essay / profile awards (cloud session, see SPEEDRUN.md if present)
+- Niche $40K no-essay – due 10/15/26 (most urgent)
+- Bold.org "Be Bold" $25K – due 10/31/26, judged on Bold profile. After the profile is complete, Bold's 90+ no-essay awards are ~1 click each
+- Sallie, Scholarships360, ScholarshipOwl – monthly drawings, re-enter monthly
+- 10 Words or Less – due 11/15/26
+- Unigo $10K – due 12/31/26 (short answer)
+
+## Short essays worth considering
+- Chris Jackson – $5K, due 10/9/26, 300–500 words
+- McNab – $1K, due 10/12/26, 400–600 words (InterviewSense fits)
+
+## Cloud session notes
+- Cloud network blocked bold.org, niche.com, sallie.com, scholarships360.org, unigo.com, scholarshipowl.com (403). Change the environment's network access to full to use them.
+- Cloud could not push to impaulse-labs: Claude GitHub App lacks access. Unpushed commits on `claude/scholarship-applications-mn0zqe` (SPEEDRUN.md, new_scholarships_2026-10-02.md, Burress + Future Leaders drafts).
+- Burress draft from cloud contains guessed details (MIPS, hackathon timing) – fix before use.
 
 ## Still to search
 - ~115 Pitt Funds Me partial matches (pitt.scholarshipuniverse.com, needs Pitt login + Duo)
