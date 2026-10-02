@@ -1,0 +1,177 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.4in}
+\addtolength{\evensidemargin}{-0.4in}
+\addtolength{\textwidth}{0.8in}
+\addtolength{\topmargin}{-0.4in}
+\addtolength{\textheight}{0.8in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      #3 & #4 \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Akhil Bodahanapati} \\ \vspace{1pt}
+    \small 747-312-1646 $|$ \href{mailto:akb198@pitt.edu}{\underline{akb198@pitt.edu}} $|$ Pittsburgh, PA $|$
+    \href{https://linkedin.com/in/akhil-bod}{\underline{linkedin.com/in/akhil-bod}} $|$
+    \href{https://github.com/akhilbod}{\underline{github.com/akhilbod}} $|$
+    \href{https://akhilbod.github.io}{\underline{akhilbod.github.io}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Pittsburgh}{Pittsburgh, PA}
+      {Bachelor of Science in Computer Science, GPA: 3.35}{Expected Dec 2027}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Data Structures, Algorithms, Systems Software, Database Management, Machine Learning}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Nutanix}{May 2026 -- Aug 2026}
+      {Software Engineer Intern}{San Jose, CA}
+      \resumeItemListStart
+        \resumeItem{Redesigned partial-update logic to preserve cluster state, stopping concurrent updates from wiping customer configs}
+        \resumeItem{Migrated per-customer rate limiting for the production IaaS control plane onto a new Go backend service}
+        \resumeItem{Added concurrency checks rejecting conflicting writes to control-plane workflows on Kubernetes, Hyper-V, and RHEL}
+        \resumeItem{Won the US + EMEA intern hackathon with a Kubernetes GPU scheduler that autoscaled and released idle GPUs}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {NLP and AI Lab, University of Pittsburgh}{Dec 2025 -- Apr 2026}
+      {Software Engineer Intern}{Pittsburgh, PA}
+      \resumeItemListStart
+        \resumeItem{Cut experiment turnaround from 4 min to 75 s (3.2x) by rewriting slow PostgreSQL queries and adding Redis job queues}
+        \resumeItem{Built parallel Python inference pipelines over 1M+ documents, enabling corpus-scale NLP experiments for researchers}
+        \resumeItem{Built async FastAPI services to submit, track, and retrieve long-running inference jobs for concurrent users}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Federated Hermes}{May 2025 -- Aug 2025}
+      {Software Engineer Intern}{Pittsburgh, PA}
+      \resumeItemListStart
+        \resumeItem{Built Python/Flask services for portfolio analysis and rebalancing workflows on portfolios totaling \$2B+ in client assets}
+        \resumeItem{Partnered with portfolio managers to replace manual portfolio and trade workflows, projected to save \$75K/yr in effort}
+        \resumeItem{Designed PostgreSQL schemas linking portfolio, account, and trade records to power investment and reporting queries}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{InterviewSense} $|$ \href{https://interviewsense.org}{\underline{interviewsense.org}} $|$ 25,000+ Registered Users}{}
+          \resumeItemListStart
+            \resumeItem{Built and scaled an AI interview platform with Python, FastAPI, Azure OpenAI, PostgreSQL, and React}
+            \resumeItem{Designed Stripe billing and a usage-credit ledger that automatically refunds credits when model requests fail}
+            \resumeItem{Engineered pipelines syncing 10,000+ job postings into search-indexed pages, driving 20K+ monthly organic visitors}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Orbit} $|$ \href{https://github.com/Not-Ethan/Orbit}{\underline{github.com/Not-Ethan/Orbit}} $|$ CMU TartanHacks Winner}{}
+          \resumeItemListStart
+            \resumeItem{Built a distributed semantic search engine over 500K records using Python, C++, and FAISS}
+            \resumeItem{Partitioned vector search across independent workers and merged per-shard ranked results in a central coordinator}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Quantitative Investment Engine} $|$ 1st Place, Federated Hermes Hackathon}{}
+          \resumeItemListStart
+            \resumeItem{Built a Python and SQL research engine on Databricks and AWS that ranked investment ideas on historical market data}
+            \resumeItem{Automated strategy backtesting and portfolio analysis into reproducible pipelines, replacing recurring manual research}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Go, C++, Java, TypeScript, JavaScript, SQL, Bash} \\
+     \textbf{Frameworks}{: FastAPI, Flask, React} \\
+     \textbf{Infrastructure}{: AWS, Docker, Kubernetes, Linux, Git, GitHub Actions} \\
+     \textbf{Data}{: PostgreSQL, Redis, Databricks, FAISS}
+    }}
+ \end{itemize}
+
+\end{document}

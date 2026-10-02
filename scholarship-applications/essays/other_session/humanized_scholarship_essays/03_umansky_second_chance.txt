@@ -1,0 +1,22 @@
+Umansky Law Firm: Second Chance Foundation Scholarship
+Prompt: Share a hardship you have overcome and what a second chance means to you.
+
+The first time I took CS 0447, Computer Organization and Assembly Language, I got a D+.
+
+If you haven't taken it, 0447 is the class where Pitt CS students learn what a computer is actually doing underneath the code. You write assembly by hand, you trace how data moves through registers and memory, and you find out that a single wrong bit can make a program do something completely different from what you meant. It's a class a lot of people struggle in. I still took the grade personally. I had always been the kid who was good with computers. Seeing a D+ next to a CS course felt like someone had found me out.
+
+I could explain that semester with a list of reasons, and some of them would be real. My family has been dealing with health problems for years. We'd already moved across the country once, from Cupertino to Pennsylvania, and money had been tight since. I was carrying a full course load and trying to keep up with everything else. But I also know that part of it was me. I didn't go to office hours. I thought I could figure it out alone the way I'd figured out most things, and I waited too long to admit I couldn't.
+
+The D+ came with a choice. I could quietly switch majors, which honestly crossed my mind, or I could retake the class. I retook it the next spring, which turned out to be the hardest semester I've had. I was also taking Algorithms and Data Structures 2 and Formal Methods, two of the courses Pitt students warn each other about, and I had just started working at the university's Natural Language Processing lab. Something had to give, and I ended up withdrawing from a writing class to protect the rest. My term GPA that spring was a 2.8. Not great.
+
+But I got a B in 0447 the second time.
+
+I know a B doesn't sound like a dramatic comeback. To me it was the whole point. The second time through I went to office hours. I worked problems on paper before touching the keyboard. I stopped treating not understanding something as a sign that I didn't belong, and started treating it as a normal Tuesday. That shift mattered more than the letter grade, because it changed how I've approached everything since.
+
+The same semester, at the NLP lab, I worked on infrastructure that ran experiments across about a million documents. Our experiment runs took four minutes each, which doesn't sound like much until you're running hundreds of them. I spent a few weeks rewriting our database queries and adding a job queue and got it down to seventy-five seconds. A year earlier I would have assumed that kind of problem was for someone smarter than me. After 0447, I assumed it was something I could figure out if I was willing to be stuck for a while first.
+
+That summer I interned at Nutanix in San Jose, working on the backend that cloud customers depend on. One of my projects was fixing how partial updates worked, so that one bad request couldn't wipe out a customer's configuration. It's a funny thing to work on after the year I'd had. A lot of good engineering is about building systems that give you a second chance, that let you recover from a mistake without losing everything. I'd been on the receiving end of that kind of grace, and I liked being on the building end of it.
+
+So what does a second chance mean to me? Mostly, it means somebody let me try again without deciding who I was based on my worst semester. Pitt let me retake the class. My lab took me on when my transcript wasn't perfect. My family kept believing I'd figure it out even when they had plenty of their own problems to deal with. None of those people were obligated to do that.
+
+I'm graduating in December 2027 with a computer science degree. I still have the D+ on my transcript, marked as repeated, and I'm fine with it being there. It's an honest record of where I started. This scholarship would help me get through my last semesters, which are some of the most demanding in the major, without the money pressure that's followed my family for years. And at some point I want to be the person who gives someone else a second try, whether that's a junior engineer who breaks something in production or a student who is staring at a D+ and wondering if they should quit.

@@ -1,0 +1,269 @@
+AKHIL BODAHANAPATI - SCHOLARSHIP ESSAYS (MEGA FILE)
+
+Compiled from the current drafts in /Users/akhil/Desktop/scholarships
+
+CONTENTS
+1. Perez Mayoral Trailblazer Scholarship
+2. Largey Law Firm - Overcoming the Impossible Scholarship
+3. Umansky Law Firm - Second Chance Foundation Scholarship
+4. Easton & Easton College Scholarship
+5. Mandour & Associates - What Will Be Your Trademark?
+6. BlankStyle Scholarship Fund - all fields and passages
+7. Dundee Deco Scholarship
+
+Note: The Easton PDF and easton_three_skills.txt contain the same essay, so that essay is included once.
+
+========================================================================================
+
+1. Perez Mayoral Trailblazer Scholarship
+
+Akhil Bodahanapati
+University of Pittsburgh, Computer Science, Expected December 2027
+Perez Mayoral Trailblazer Scholarship
+Describe your ultimate career or advocacy goals and how you envision making an impact
+in your community.
+When people find out I grew up in Cupertino, they usually assume they know my story. Good
+schools, nice neighborhood, parents with tech jobs, a straight line to a computer science
+degree. I understand why. From the outside, that's what it looked like.
+What they don't see is everything that happened inside our house. My family dealt with health
+problems that didn't go away and didn't wait for a good time. We moved more than once, and
+each move meant a new school, new people, and starting over. Money got tight in ways
+nobody around us would have guessed. That was its own kind of hard, because in a place like
+Cupertino, struggling is something you keep to yourself.
+The thing I remember most from those years isn't one big moment. It's how much time went
+into just figuring things out. Who do you call? What does this letter mean? Which form is the
+right one, and what happens if you get it wrong? Every system we dealt with, whether it was
+medical, financial, or school, seemed built for people who already knew how it worked. If you
+didn't, you were expected to figure it out alone, usually while you were already stretched thin.
+That's where my idea of advocacy comes from. I don't picture standing at a podium. I picture
+the person at the kitchen table at midnight, trying to understand a bill or a denial letter, who
+doesn't know they have options. Most people who get lost in these systems aren't failing
+because they don't care. They're failing because the information is buried, confusing, or
+written for someone else.
+I'm studying computer science at the University of Pittsburgh and graduating in December
+2027. I chose CS partly because it was the one thing in my life that felt fair. Code either works
+or it doesn't, and if you put in the effort, you can see exactly where you went wrong and fix it.
+When everything else felt unstable, that mattered to me. Over time, I've realized that the same
+skill can be used to make other people's lives feel a little more fair too.
+My goal is to build software that helps people get through the systems that are supposed to
+serve them. That could be tools that explain medical bills and insurance decisions in plain
+language. It could be tools that help families find assistance programs they qualify for but
+have never heard of. It could be tools that walk tenants and homeowners through their rights
+before a problem turns into a crisis. The technology for this already exists. What's usually
+missing is someone who has been on the other side of the kitchen table and cares about getting
+it right for the people who need it most.
+Your firm's work stood out to me for that reason. You represent individuals and small
+businesses against HOAs and insurance companies, organizations that have far more resources
+and far more knowledge of the rules. That gap in knowledge and power is exactly what I want
+to work on, just with code instead of courtrooms. A good lawyer makes sure someone isn't
+steamrolled because they didn't know their rights. I want to build tools that make sure people
+know those rights before they ever need a lawyer.
+In the short term, my focus is finishing my degree strong. My final semesters are the most
+demanding part of the program, and the same pressures I've dealt with for years haven't
+disappeared just because I'm close to the finish line. This scholarship would give me room to
+focus on my coursework instead of worrying about how to cover it.
+In the long term, I want to work in software that has a direct effect on people's everyday lives,
+not just their entertainment. I want to bring the perspective of someone who has had to work
+through these systems without help. I also want to be someone others can come to, whether it's
+family, friends, or students coming up behind me, when they're trying to figure out the same
+things I once had to figure out alone.
+Trailblazing, to me, doesn't mean being the first person to do something impressive. It means
+clearing a path so the next person has an easier time getting through. That's the kind of impact
+I want to have, and it's the reason I'm working as hard as I am to finish what I started.
+
+========================================================================================
+
+2. Largey Law Firm - Overcoming the Impossible Scholarship
+
+Largey Law Firm: Overcoming The Impossible Scholarship
+Prompt: Describe how you or someone you know has faced a traumatic event and found a way to overcome the struggle to better shape themselves.
+
+When I was growing up in Cupertino, my family looked fine from the street. We lived in a town where everyone's parents seemed to work at Apple or a startup, and I went to schools where the main stress was whether you'd get into Stanford. I didn't talk about what was going on at home, mostly because nobody around me seemed to have anything like it going on, or if they did, they hid it as well as we did.
+
+What was going on was that my family's health fell apart, and it didn't happen in a clean way where someone gets sick and then gets better. It dragged. There were appointments I drove to and waited through. There were nights when the house was quiet in a way that told you something was wrong before anyone said anything. I learned to read my parents' faces when they came back from a doctor. I also learned which questions not to ask.
+
+Money got tight because of it. Medical bills don't care what zip code you live in, and Cupertino is an expensive place to have a bad year. Eventually we moved across the country to Pennsylvania. I was a teenager, and I remember being angry about it in a way that I'm a little embarrassed about now. I had friends, I knew the roads, I knew which teachers would let you turn things in late. Then I was in a new school where I didn't know anyone and it snowed in a way I'd only seen in movies.
+
+I wish I could say I handled it well. I didn't, at first. I pulled back. I did the minimum, I kept to myself, and I told myself it didn't matter because none of this was going to be permanent anyway. It took me a while to realize that it was permanent, at least the part where my life wasn't going back to how it was.
+
+The thing that pulled me out was small. I started taking a programming class through La Roche University while I was still in high school, mostly because it was something to do that wasn't sitting at home. I liked it more than I expected. Code is strict. It either runs or it doesn't, and when it doesn't, it tells you, sometimes rudely, exactly where you messed up. After a few years of things going wrong for reasons I couldn't see or fix, that was a relief. I could sit with a broken program for three hours and eventually it would work, and the reason it worked would be something I did.
+
+That sounds like a neat ending. It wasn't. I got to Pitt and the hard stuff didn't stop just because I'd found something I liked. My calculus grade my first semester was a C. In my second year I got a D+ in Computer Organization and Assembly Language, which was the first time I'd ever really failed at something I cared about. The next spring was worse on paper. I was working at Pitt's Natural Language Processing lab, retaking that class, and taking two of the hardest courses in the CS major at the same time. My term GPA was a 2.8. I withdrew from a writing class because I couldn't keep everything above water.
+
+Here's the part I'm actually proud of. I retook Computer Organization and got a B. I kept my job at the lab and cut one of our experiment runs from four minutes to seventy-five seconds. I built a project on the side called InterviewSense, an interview practice tool, and it now has more than 25,000 users. This past summer I interned at Nutanix in San Jose, about ten minutes from the house I grew up in, and my team won the intern hackathon. I drove past my old middle school on the way to work some days. It was strange in a good way.
+
+I don't think the hard years made me a better person automatically. I think a lot of people go through things like what my family went through and come out of it more tired, not stronger, and that's fair. What changed for me is that I stopped waiting for things to go back to normal and started building something new with what was left. I got used to starting over. I got used to being bad at something for a while before being good at it. Those are the two things I lean on most now, in school and at work.
+
+I'm a computer science major at Pitt, graduating in December 2027. My family is still dealing with some of the same things, and I still carry some of it with me. This scholarship would take a piece of the money pressure off during my last few semesters, which are the hardest ones in the program. I would put that space toward finishing the way I want to finish, which is better than I started.
+
+========================================================================================
+
+3. Umansky Law Firm - Second Chance Foundation Scholarship
+
+Umansky Law Firm: Second Chance Foundation Scholarship
+Prompt: Share a hardship you have overcome and what a second chance means to you.
+
+The first time I took CS 0447, Computer Organization and Assembly Language, I got a D+.
+
+If you haven't taken it, 0447 is the class where Pitt CS students learn what a computer is actually doing underneath the code. You write assembly by hand, you trace how data moves through registers and memory, and you find out that a single wrong bit can make a program do something completely different from what you meant. It's a class a lot of people struggle in. I still took the grade personally. I had always been the kid who was good with computers. Seeing a D+ next to a CS course felt like someone had found me out.
+
+I could explain that semester with a list of reasons, and some of them would be real. My family has been dealing with health problems for years. We'd already moved across the country once, from Cupertino to Pennsylvania, and money had been tight since. I was carrying a full course load and trying to keep up with everything else. But I also know that part of it was me. I didn't go to office hours. I thought I could figure it out alone the way I'd figured out most things, and I waited too long to admit I couldn't.
+
+The D+ came with a choice. I could quietly switch majors, which honestly crossed my mind, or I could retake the class. I retook it the next spring, which turned out to be the hardest semester I've had. I was also taking Algorithms and Data Structures 2 and Formal Methods, two of the courses Pitt students warn each other about, and I had just started working at the university's Natural Language Processing lab. Something had to give, and I ended up withdrawing from a writing class to protect the rest. My term GPA that spring was a 2.8. Not great.
+
+But I got a B in 0447 the second time.
+
+I know a B doesn't sound like a dramatic comeback. To me it was the whole point. The second time through I went to office hours. I worked problems on paper before touching the keyboard. I stopped treating not understanding something as a sign that I didn't belong, and started treating it as a normal Tuesday. That shift mattered more than the letter grade, because it changed how I've approached everything since.
+
+The same semester, at the NLP lab, I worked on infrastructure that ran experiments across about a million documents. Our experiment runs took four minutes each, which doesn't sound like much until you're running hundreds of them. I spent a few weeks rewriting our database queries and adding a job queue and got it down to seventy-five seconds. A year earlier I would have assumed that kind of problem was for someone smarter than me. After 0447, I assumed it was something I could figure out if I was willing to be stuck for a while first.
+
+That summer I interned at Nutanix in San Jose, working on the backend that cloud customers depend on. One of my projects was fixing how partial updates worked, so that one bad request couldn't wipe out a customer's configuration. It's a funny thing to work on after the year I'd had. A lot of good engineering is about building systems that give you a second chance, that let you recover from a mistake without losing everything. I'd been on the receiving end of that kind of grace, and I liked being on the building end of it.
+
+So what does a second chance mean to me? Mostly, it means somebody let me try again without deciding who I was based on my worst semester. Pitt let me retake the class. My lab took me on when my transcript wasn't perfect. My family kept believing I'd figure it out even when they had plenty of their own problems to deal with. None of those people were obligated to do that.
+
+I'm graduating in December 2027 with a computer science degree. I still have the D+ on my transcript, marked as repeated, and I'm fine with it being there. It's an honest record of where I started. This scholarship would help me get through my last semesters, which are some of the most demanding in the major, without the money pressure that's followed my family for years. And at some point I want to be the person who gives someone else a second try, whether that's a junior engineer who breaks something in production or a student who is staring at a D+ and wondering if they should quit.
+
+========================================================================================
+
+4. Easton & Easton College Scholarship
+
+The Easton & Easton College Scholarship
+Prompt: What are the top three skills you are working to cultivate that will help you achieve your career goals?
+
+I want to be a software engineer who builds things that hold up when real people use them. I've had enough internships and side projects by now to know that writing code that works on my laptop is the easy part. The skills I'm working on are the ones that come after that.
+
+The first is thinking about what happens when things go wrong.
+
+When I started programming, I wrote code for the happy path. The user types the right input, the network is up, the database answers. Then I built InterviewSense, an AI interview practice platform, and real people started using it. Today it has more than 25,000 users. Real users find every edge case you didn't think about, and some you couldn't have. One early problem: we charged usage credits before calling an AI model, and if the model request failed, the user lost the credit and got nothing. Nobody complained loudly, but I noticed the support emails. I rebuilt the billing flow so failed requests automatically gave the credit back. It was a small fix, but it was the first time I thought about failure as something to design for instead of something to apologize for.
+
+I got a bigger version of that lesson this summer at Nutanix, where I interned on the control plane for their cloud infrastructure. I worked on how partial updates were applied to customer clusters. The old logic could, in certain situations, overwrite settings a customer never meant to change. You don't notice a bug like that until it hits someone's production system. I redesigned the update path to preserve existing state, and added checks for conflicting writes when two requests hit the same resource at once. I'm still learning how to anticipate those cases before they happen. My instinct now is to ask "what's the worst thing this could do" before I ask "does it work."
+
+The second skill is making things faster without making them fragile.
+
+At Pitt's Natural Language Processing lab, researchers ran experiments over roughly a million documents. Each run took about four minutes, which meant people waited around a lot and ran fewer experiments than they wanted to. I dug into it and found that most of the time was spent in slow database queries and in work that could have been done in parallel. I rewrote the PostgreSQL queries and added Redis-backed job queues, and turnaround dropped to about seventy-five seconds.
+
+What I took from that wasn't really about databases. It was that performance work is mostly patience. You measure, you find the one thing that matters, and you leave everything else alone. I used to want to rewrite whole systems. Now I'm more interested in finding the one slow line. I'm practicing this in my coursework too, especially in Database Management Systems this semester, where I can see why the tricks I used at the lab worked.
+
+The third skill is communicating clearly, and I'll be honest that this is the one I'm furthest behind on.
+
+I'm better at talking to computers than to people. In my sophomore spring, I withdrew from a professional writing course because I was overloaded, and I knew at the time that I was dropping the class I probably needed most. I'm retaking a professional communication course this semester and taking it seriously. At work I've started to notice how much good engineering depends on writing. A design doc that's clear saves a week of meetings. A pull request description that explains the "why" saves a reviewer an hour. At Federated Hermes I worked directly with portfolio managers to replace manual workflows with backend services, and the hard part was never the Python. It was understanding what they actually needed and explaining what I could build in words that made sense to someone who doesn't write code.
+
+I've also seen what happens when communication goes well. At the Nutanix intern hackathon, my team built a Kubernetes scheduler that automatically parked idle GPUs, and we won for the US and EMEA region. The project was good, but I think we won because we explained it in two minutes in a way that made judges care about GPU waste. I want to be able to do that on purpose, not by accident.
+
+These three skills fit together for me. I want to build systems that survive mistakes, that are fast enough people actually use them, and that other people can understand and trust. I'm graduating from the University of Pittsburgh with a computer science degree in December 2027. After that I want to work on infrastructure and backend systems, the kind of software that most people never see but that everything depends on.
+
+My family has dealt with health problems and financial strain for a long time, including a move across the country from California to Pennsylvania. Those years taught me to work hard without assuming things would go smoothly. This scholarship would help cover my last semesters so I can spend more time getting better at these skills and less time worrying about how to pay for them.
+
+========================================================================================
+
+5. Mandour & Associates - What Will Be Your Trademark?
+
+Mandour & Associates: What Will Be Your Trademark? Scholarship
+Prompt: When your career is over, what will you be known for? (500 words max, in email body)
+
+I want to be known as the engineer whose software didn't break on people.
+
+That sounds modest, and it is. Most software failures never make the news. They show up as someone losing an afternoon of work, getting charged twice, or watching a form erase everything they typed. They happen to people who don't have the time or energy to deal with it, and I grew up around that kind of exhaustion. My family has dealt with long health problems and money stress, including a move from Cupertino to Pennsylvania. I watched my parents fight with insurance portals and billing systems that seemed designed by someone who had never been tired.
+
+So I care about the boring parts of engineering: what happens when a request fails, when two updates collide, when a user does something nobody expected.
+
+I've started building that reputation already. I built InterviewSense, an AI interview practice platform that has grown to more than 25,000 users. Early on, users were losing credits when an AI request failed. Nobody was going to sue me over a lost credit, but it bothered me, so I rebuilt the billing so failed requests refund automatically. At Nutanix this summer, I worked on the cloud control plane and redesigned how partial updates were applied, so a bad request couldn't wipe out a customer's configuration. At Pitt's NLP lab, I cut experiment turnaround from four minutes to seventy-five seconds so researchers could spend their time thinking instead of waiting.
+
+None of those are flashy. They're the kind of work you only notice when it's missing.
+
+By the end of my career, I want my trademark to be trust. I want people on my teams to know that if I built it, it handles the bad day as well as the good one. I want to have mentored engineers who think about the person on the other end of the screen. And I'd like to spend part of my career on software for things like healthcare billing and benefits, the systems where a bug costs someone more than a few minutes.
+
+I'm a computer science student at the University of Pittsburgh, graduating in December 2027. The $2,500 would cover a real share of my final semesters and let me focus on finishing strong instead of on how to pay for it.
+
+Akhil Bodahanapati
+University of Pittsburgh, B.S. Computer Science, Expected December 2027
+akkiisan9@gmail.com | 747-312-1646
+
+========================================================================================
+
+6. BlankStyle Scholarship Fund - All Fields and Passages
+
+BlankStyle Scholarship Fund (form at blankstyle.com/forms/scholarship-application)
+
+FORM FIELDS
+First Name: Akhil
+Last Name: Bodahanapati
+Email: akkiisan9@gmail.com
+Phone: 747-312-1646
+Home Address: (you fill in)
+Scholarship Referral: https://pitt.scholarshipuniverse.com
+School Applicant Will Attend Next Fall: University of Pittsburgh
+Department and Major: School of Computing and Information, Computer Science
+Class: Senior
+Expected Graduation Year: 2027
+Degree Expected: B.S. Computer Science
+Name of School: University of Pittsburgh
+GPA: 3.35
+
+---
+ACCOMPLISHMENT (two paragraphs)
+
+The thing I'm proudest of is InterviewSense, an AI interview practice platform I built on my own and grew to more than 25,000 users. I wrote the backend, the frontend, the billing, and the pipeline that pulls in over 10,000 job postings so people can practice for the roles they're actually applying to. Outside of that, I've interned as a software engineer at Federated Hermes and at Nutanix, worked at Pitt's Natural Language Processing lab, and won three hackathons, including first place at Federated Hermes, CMU's TartanHacks, and the Nutanix US and EMEA intern hackathon. I did most of this while my family dealt with ongoing health problems and money stress, which I don't usually lead with, but it's part of the picture.
+
+With my computer science degree, I want to work on backend and infrastructure systems, the software most people never see but depend on every day. Longer term, I'd like to put that experience toward systems like healthcare billing and benefits, where a bug or a confusing screen costs someone real money and real stress. I've watched my own family get worn down by those systems, and I think I could make some of them less miserable to deal with.
+
+---
+WHY YOU? (two paragraphs)
+
+I'm not the student with a perfect transcript. I got a D+ in a core CS class my sophomore year and had a rough semester after that. I retook the class, got a B, and kept working at a research lab through all of it. I've learned more from being bad at something and sticking with it than from anything that came easily, and I think that's the kind of person scholarships are supposed to help, the one who is going to finish no matter what but would finish better with some help.
+
+I've also already shown I'll make something useful with what I'm given. When I had free time and a laptop, I built a product that 25,000 people use to prepare for job interviews. When I had a summer internship, I shipped fixes that protect customer data in production. A $1,000 scholarship to me isn't going to sit idle. It's going to buy back hours I'd otherwise spend worrying about tuition, and I'll spend those hours on work that's worth something.
+
+---
+T-SHIRTS
+
+Most of my wardrobe is hackathon shirts. You stay up for 36 hours writing code with three people you met that morning, you eat a concerning amount of pizza, and at the end you get a free shirt that's one size too big. I've won a few hackathons now, but honestly the shirts from the ones I lost are my favorites, because I remember exactly what broke. I wear them to class, to sleep, and to every all-nighter before a big deadline. At this point they're less clothing and more a log file of my college career.
+
+---
+ESSAY (about 1,000 words)
+How the blankstyle.com scholarship could help you accomplish your goals
+
+I'm a computer science student at the University of Pittsburgh, and I'll graduate in December 2027. That date is close enough now that I can see the end of college, and far enough away that the last stretch still feels like a lot. The final semesters in Pitt's CS program are the heavy ones: databases, machine learning math, systems courses, and a set of upper-level electives that each take more time than any two of my freshman classes put together. This scholarship would help me get through that stretch with less of the financial pressure my family has been living with for years.
+
+Some background on that pressure. I grew up in Cupertino, California. From the outside it looked like an easy place to grow up, and for a while it was. Then my family went through serious health problems that didn't resolve quickly, and the costs that came with them changed a lot about how we lived. We eventually moved across the country to Pennsylvania. I was a teenager, I didn't want to go, and I had to start over at a new school with nobody I knew. My family is still dealing with some of the same issues today. I don't say that to get sympathy. It's just the honest context for why a thousand dollars matters to me.
+
+Here's what I'm trying to accomplish.
+
+The near-term goal is finishing my degree well. I've had a bumpy record. My second year included a D+ in Computer Organization and a semester where my term GPA dropped to a 2.8 while I retook that class, took two of the hardest courses in the major, and worked at a research lab. I retook the class and earned a B, and I'm in a stronger place now. But I've learned that my grades are directly tied to how much time and headspace I have. When I have to pick up extra hours or worry about bills, my schoolwork is the first thing that slides. A scholarship gives me back some of that time. Practically, it means fewer hours worrying and more hours in office hours, in the lab, and actually understanding the material instead of surviving it.
+
+The medium-term goal is a full-time software engineering job. I've worked hard to put myself in a good position. I've interned at Federated Hermes, where I built portfolio services that handled analysis across more than $2 billion in client assets, and at Nutanix, where I worked on the control plane for their cloud infrastructure. During the school year I worked at Pitt's Natural Language Processing lab, where I cut our experiment turnaround from four minutes to about seventy-five seconds. I've won three hackathons. The last year of college is when all of that turns into a job offer or doesn't. The more I can focus on finishing strong, the better my odds.
+
+The long-term goal is the one I care about most. I want to build software for systems that people have no choice but to use, like healthcare billing, insurance, and public benefits. I watched my parents spend hours on hold, fill out forms that contradicted each other, and get charged for things they shouldn't have been charged for. The people who built those systems probably weren't bad people. They just weren't thinking about the user who is exhausted, scared, and has already filled out three other forms that week. I think about that user a lot, and I think engineers who have been in that position build different software.
+
+I've already started practicing that kind of thinking. My biggest project is InterviewSense, an AI interview practice platform that has grown to more than 25,000 users. Early on, I noticed that when an AI request failed, users lost the credit they'd paid for and got nothing back. It wasn't a huge amount of money for anyone, but it was unfair, and it was the kind of thing that makes people stop trusting a product. I rebuilt the billing flow so credits are refunded automatically when something fails on our end. At Nutanix, I worked on a similar problem at a much bigger scale, redesigning how partial updates were applied so one bad request couldn't wipe out a customer's configuration. Those are the kinds of problems I want to keep working on.
+
+So how specifically would this scholarship help?
+
+First, it would go straight toward tuition for my final semesters. Pitt is expensive, especially for a family that has spent years absorbing medical costs. Every dollar of aid is a dollar my family doesn't have to find somewhere else.
+
+Second, it would buy me focus. I've been the student who works extra hours and studies on whatever time is left over. I've also been the student who had enough breathing room to actually go to office hours and redo problem sets until they made sense. The second version of me earns much better grades and learns much more. I'd like to finish college as that version.
+
+Third, and this is harder to measure, it would mean something to me that a company with no connection to me decided I was worth betting on. A lot of my motivation has come from people who took a chance when they didn't have to. Pitt let me retake a class I'd done badly in. My research lab took me on when my transcript wasn't perfect. I don't take that kind of trust lightly, and I try to pay it back by doing good work.
+
+I know a lot of students apply for this scholarship, and many of them have stories as hard as mine or harder. What I can promise is that I'll use it well. I have a track record of taking limited time and resources and building something people actually use. If you give me a little more room in my last year, I'll use it to finish my degree well and start a career building software that treats people fairly when they're having a bad day.
+
+Thank you for reading, and thanks to blankstyle for putting this scholarship out there at all.
+
+========================================================================================
+
+7. Dundee Deco Scholarship
+
+Dundee Deco Scholarship (Google Form, 300 words)
+Topic: The Psychology of Space: how study environment design affects academic performance and mental health
+
+The worst semester I've had at Pitt, I did almost all of my studying in bed.
+
+It made sense at the time. I was taking a heavy course load, retaking a class I'd done badly in, and working at a research lab, so I was tired constantly, and my bed was the closest flat surface. What I didn't notice until later was that my brain stopped separating work from rest. I'd lie down to sleep and start thinking about an algorithm. I'd sit down to study and feel like napping. My grades that spring were the lowest they've been.
+
+The next semester I changed one thing. I set up a small desk by the window, put a lamp on it with warm light instead of my overhead light, and made a rule that the bed was only for sleeping. Having a separate place for work meant I could actually leave work when I left the desk. I slept better, and I focused faster when I sat down because my brain knew what that chair was for.
+
+I think this is the core of how space affects students: environments teach habits. Natural light helps people stay alert and keep a regular sleep schedule. A cluttered desk competes for attention, even when you aren't looking at it. Even small boundaries, like a specific chair or a specific lamp, can give your brain a cue that it's time to focus.
+
+Most student housing isn't designed with any of this in mind. Rooms are small, lighting is harsh, and the bed is often the only comfortable seat. Better design wouldn't need to be expensive. It needs to give students a place that means work and a different place that means rest.
+
+I learned that the hard way. Good design could teach it earlier.

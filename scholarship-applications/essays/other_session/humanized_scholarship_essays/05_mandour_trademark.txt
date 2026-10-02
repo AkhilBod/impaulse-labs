@@ -1,0 +1,20 @@
+Mandour & Associates: What Will Be Your Trademark? Scholarship
+Prompt: When your career is over, what will you be known for? (500 words max, in email body)
+
+I want to be known as the engineer whose software didn't break on people.
+
+Most software failures never make the news. They look like someone losing an afternoon of work, getting charged twice, or watching a form erase everything they typed. The people affected may not have the time or energy to deal with another problem, and I grew up around that kind of exhaustion. My family has dealt with long health problems and money stress, including a move from Cupertino to Pennsylvania. I watched my parents fight with insurance portals and billing systems that seemed designed by someone who had never been tired.
+
+So I care about the boring parts of engineering: what happens when a request fails, when two updates collide, when a user does something nobody expected.
+
+I have started doing that work already. I built InterviewSense, an AI interview practice platform that has grown to more than 25,000 users. Early on, users lost credits when an AI request failed. Nobody was going to sue me over a lost credit, but it bothered me, so I rebuilt the billing flow to refund failed requests automatically. At Nutanix this summer, I worked on the cloud control plane and redesigned how partial updates were applied so one bad request could not wipe out a customer's configuration. At Pitt's NLP lab, I cut experiment turnaround from four minutes to seventy-five seconds, which gave researchers more time to think and less time waiting for a run to finish.
+
+People usually notice this kind of work only when it is missing.
+
+By the end of my career, I want my trademark to be trust. I want my teammates to know that if I built something, it will handle a bad day as well as a good one. I hope to mentor engineers who think about the person on the other end of the screen. I also want to spend part of my career working on healthcare billing and benefits, where a software bug can cost someone more than a few minutes.
+
+I'm a computer science student at the University of Pittsburgh, graduating in December 2027. The $2,500 would cover a real share of my final semesters and let me focus on finishing strong instead of on how to pay for it.
+
+Akhil Bodahanapati
+University of Pittsburgh, B.S. Computer Science, Expected December 2027
+akkiisan9@gmail.com | 747-312-1646

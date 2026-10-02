@@ -1,0 +1,65 @@
+BlankStyle Scholarship Fund (form at blankstyle.com/forms/scholarship-application)
+
+FORM FIELDS
+First Name: Akhil
+Last Name: Bodahanapati
+Email: akkiisan9@gmail.com
+Phone: 747-312-1646
+Home Address: (you fill in)
+Scholarship Referral: https://pitt.scholarshipuniverse.com
+School Applicant Will Attend Next Fall: University of Pittsburgh
+Department and Major: School of Computing and Information, Computer Science
+Class: Senior
+Expected Graduation Year: 2027
+Degree Expected: B.S. Computer Science
+Name of School: University of Pittsburgh
+GPA: 3.35
+
+---
+ACCOMPLISHMENT (two paragraphs)
+
+The thing I'm proudest of is InterviewSense, an AI interview practice platform I built on my own and grew to more than 25,000 users. I wrote the backend, the frontend, the billing, and the pipeline that pulls in over 10,000 job postings so people can practice for the roles they're actually applying to. Outside of that, I've interned as a software engineer at Federated Hermes and at Nutanix, worked at Pitt's Natural Language Processing lab, and won three hackathons, including first place at Federated Hermes, CMU's TartanHacks, and the Nutanix US and EMEA intern hackathon. I did most of this while my family dealt with ongoing health problems and money stress, which I don't usually lead with, but it's part of the picture.
+
+With my computer science degree, I want to work on backend and infrastructure systems, the software most people never see but depend on every day. Longer term, I'd like to put that experience toward systems like healthcare billing and benefits, where a bug or a confusing screen costs someone real money and real stress. I've watched my own family get worn down by those systems, and I think I could make some of them less miserable to deal with.
+
+---
+WHY YOU? (two paragraphs)
+
+I'm not the student with a perfect transcript. I got a D+ in a core CS class my sophomore year and had a rough semester after that. I retook the class, got a B, and kept working at a research lab through all of it. I've learned more from being bad at something and sticking with it than from anything that came easily, and I think that's the kind of person scholarships are supposed to help, the one who is going to finish no matter what but would finish better with some help.
+
+I've also already shown I'll make something useful with what I'm given. When I had free time and a laptop, I built a product that 25,000 people use to prepare for job interviews. When I had a summer internship, I shipped fixes that protect customer data in production. A $1,000 scholarship to me isn't going to sit idle. It's going to buy back hours I'd otherwise spend worrying about tuition, and I'll spend those hours on work that's worth something.
+
+---
+T-SHIRTS
+
+Most of my wardrobe is hackathon shirts. You stay up for 36 hours writing code with three people you met that morning, you eat a concerning amount of pizza, and at the end you get a free shirt that's one size too big. I've won a few hackathons now, but honestly the shirts from the ones I lost are my favorites, because I remember exactly what broke. I wear them to class, to sleep, and to every all-nighter before a big deadline. At this point they're less clothing and more a log file of my college career.
+
+---
+ESSAY (about 1,000 words)
+How the blankstyle.com scholarship could help you accomplish your goals
+
+I'm a computer science student at the University of Pittsburgh, and I'll graduate in December 2027. That date is close enough now that I can see the end of college, and far enough away that the last stretch still feels like a lot. The final semesters in Pitt's CS program are the heavy ones: databases, machine learning math, systems courses, and a set of upper-level electives that each take more time than any two of my freshman classes put together. This scholarship would help me get through that stretch with less of the financial pressure my family has been living with for years.
+
+Some background on that pressure. I grew up in Cupertino, California. From the outside it looked like an easy place to grow up, and for a while it was. Then my family went through serious health problems that didn't resolve quickly, and the costs that came with them changed a lot about how we lived. We eventually moved across the country to Pennsylvania. I was a teenager, I didn't want to go, and I had to start over at a new school with nobody I knew. My family is still dealing with some of the same issues today. I don't say that to get sympathy. It's just the honest context for why a thousand dollars matters to me.
+
+Here's what I'm trying to accomplish.
+
+The near-term goal is finishing my degree well. I've had a bumpy record. My second year included a D+ in Computer Organization and a semester where my term GPA dropped to a 2.8 while I retook that class, took two of the hardest courses in the major, and worked at a research lab. I retook the class and earned a B, and I'm in a stronger place now. But I've learned that my grades are directly tied to how much time and headspace I have. When I have to pick up extra hours or worry about bills, my schoolwork is the first thing that slides. A scholarship gives me back some of that time. Practically, it means fewer hours worrying and more hours in office hours, in the lab, and actually understanding the material instead of surviving it.
+
+The medium-term goal is a full-time software engineering job. I've worked hard to put myself in a good position. I've interned at Federated Hermes, where I built portfolio services that handled analysis across more than $2 billion in client assets, and at Nutanix, where I worked on the control plane for their cloud infrastructure. During the school year I worked at Pitt's Natural Language Processing lab, where I cut our experiment turnaround from four minutes to about seventy-five seconds. I've won three hackathons. The last year of college is when all of that turns into a job offer or doesn't. The more I can focus on finishing strong, the better my odds.
+
+The long-term goal is the one I care about most. I want to build software for systems that people have no choice but to use, like healthcare billing, insurance, and public benefits. I watched my parents spend hours on hold, fill out forms that contradicted each other, and get charged for things they shouldn't have been charged for. The people who built those systems probably weren't bad people. They just weren't thinking about the user who is exhausted, scared, and has already filled out three other forms that week. I think about that user a lot, and I think engineers who have been in that position build different software.
+
+I've already started practicing that kind of thinking. My biggest project is InterviewSense, an AI interview practice platform that has grown to more than 25,000 users. Early on, I noticed that when an AI request failed, users lost the credit they'd paid for and got nothing back. It wasn't a huge amount of money for anyone, but it was unfair, and it was the kind of thing that makes people stop trusting a product. I rebuilt the billing flow so credits are refunded automatically when something fails on our end. At Nutanix, I worked on a similar problem at a much bigger scale, redesigning how partial updates were applied so one bad request couldn't wipe out a customer's configuration. Those are the kinds of problems I want to keep working on.
+
+So how specifically would this scholarship help?
+
+First, it would go straight toward tuition for my final semesters. Pitt is expensive, especially for a family that has spent years absorbing medical costs. Every dollar of aid is a dollar my family doesn't have to find somewhere else.
+
+Second, it would buy me focus. I've been the student who works extra hours and studies on whatever time is left over. I've also been the student who had enough breathing room to actually go to office hours and redo problem sets until they made sense. The second version of me earns much better grades and learns much more. I'd like to finish college as that version.
+
+Third, and this is harder to measure, it would mean something to me that a company with no connection to me decided I was worth betting on. A lot of my motivation has come from people who took a chance when they didn't have to. Pitt let me retake a class I'd done badly in. My research lab took me on when my transcript wasn't perfect. I don't take that kind of trust lightly, and I try to pay it back by doing good work.
+
+I know a lot of students apply for this scholarship, and many of them have stories as hard as mine or harder. What I can promise is that I'll use it well. I have a track record of taking limited time and resources and building something people actually use. If you give me a little more room in my last year, I'll use it to finish my degree well and start a career building software that treats people fairly when they're having a bad day.
+
+Thank you for reading, and thanks to blankstyle for putting this scholarship out there at all.
